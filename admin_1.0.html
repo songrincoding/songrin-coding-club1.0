@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        송린중 코딩 동아리 관리자 시스템 v1.0
+
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- ========================= -->
+<!-- 사이드바 -->
+<!-- ========================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <h2>
+
+            송린중<br>
+            코딩 동아리
+
+        </h2>
+
+        <p>
+
+            Version 1.0
+
+        </p>
+
+    </div>
+
+    <ul>
+
+        <li onclick="showDashboard()">
+
+            🏠 대시보드
+
+        </li>
+
+        <li onclick="showStudents()">
+
+            👨‍🎓 학생 관리
+
+        </li>
+
+        <li onclick="showTeachers()">
+
+            👨‍🏫 선생님 관리
+
+        </li>
+
+        <li onclick="showClasses()">
+
+            🏫 클래스 관리
+
+        </li>
+
+        <li onclick="showLessons()">
+
+            📚 학습 관리
+
+        </li>
+
+        <li onclick="showNotices()">
+
+            📢 공지사항
+
+        </li>
+
+        <li onclick="showStatistics()">
+
+            📊 통계
+
+        </li>
+
+        <li onclick="showSettings()">
+
+            ⚙ 설정
+
+        </li>
+
+        <li onclick="logoutAdmin()">
+
+            🚪 로그아웃
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ========================= -->
+<!-- 메인 -->
+<!-- ========================= -->
+
+<main class="main">
+
+<header class="topbar">
+
+    <div>
+
+        <h1 id="pageTitle">
+
+            관리자 대시보드
+
+        </h1>
+
+        <p>
+
+            송린중 코딩 동아리 관리자 시스템
+
+        </p>
+
+    </div>
+
+    <div class="top-right">
+
+        <div class="serverBox">
+
+            <div>
+
+                🖥 서버시간
+
+            </div>
+
+            <div id="serverTime">
+
+                00:00:00
+
+            </div>
+
+            <div id="serverDate">
+
+                2026-07-18
+
+            </div>
+
+        </div>
+
+        <div class="adminBox">
+
+            <strong id="adminName">
+
+                관리자
+
+            </strong>
+
+            <br>
+
+            Administrator
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ========================= -->
+<!-- 대시보드 -->
+<!-- ========================= -->
+
+<section
+id="dashboardPage"
+class="page">
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+전체 학생
+
+</h3>
+
+<p id="totalStudents">
+
+0명
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+승인 완료
+
+</h3>
+
+<p id="approvedStudents">
+
+0명
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+승인 대기
+
+</h3>
+
+<p id="pendingStudents">
+
+0명
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+평균 진도
+
+</h3>
+
+<p id="avgProgress">
+
+0%
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+평균 점수
+
+</h3>
+
+<p id="averageScore">
+
+0점
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+오늘 출석
+
+</h3>
+
+<p id="todayAttendance">
+
+0명
+
+</p>
+
+</div>
+
+</div>
+
+<div class="dashboardGrid">
+
+<div class="box">
+
+<h2>
+⚡ 빠른 실행
+</h2>
+
+<button onclick="showStudents()">
+학생 관리
+</button>
+
+<button onclick="showTeachers()">
+선생님 관리
+</button>
+
+<button onclick="showClasses()">
+클래스 관리
+</button>
+
+<button onclick="showLessons()">
+학습 관리
+</button>
+
+<button onclick="showNotices()">
+공지사항
+</button>
+
+<button onclick="showSettings()">
+설정
+</button>
+
+</div>
+
+<div class="box">
+
+<h2>
+
+🆕 최근 가입 학생
+
+</h2>
+
+<div id="recentStudents">
+
+학생이 없습니다.
+
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>
+
+📢 최근 공지
+
+</h2>
+
+<div id="recentNotices">
+
+공지가 없습니다.
+
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>
+
+🏆 학생 랭킹
+
+</h2>
+
+<div id="studentRanking">
+
+랭킹이 없습니다.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- 학생 관리 -->
+<!-- ========================= -->
+
+<section
+id="studentPage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+👨‍🎓 학생 관리
+
+</h2>
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="studentName"
+        placeholder="학생 이름">
+
+    <input
+        type="text"
+        id="studentId"
+        placeholder="학번">
+
+    <input
+        type="text"
+        id="studentUsername"
+        placeholder="아이디">
+
+    <select id="studentClass">
+
+        <option value="">
+            클래스 선택
+        </option>
+
+    </select>
+
+    <button onclick="addStudent()">
+        ➕ 학생 추가
+    </button>
+
+<button onclick="searchStudents()">
+
+🔍 검색
+
+</button>
+
+<button onclick="loadStudents()">
+
+🔄 새로고침
+
+</button>
+
+</div>
+
+<br>
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>이름</th>
+<th>학번</th>
+<th>아이디</th>
+<th>반</th>
+<th>상태</th>
+<th>관리</th>
+
+</tr>
+
+</tr>
+
+</thead>
+
+<tbody id="studentTable">
+
+<tr>
+
+<td colspan="6">
+
+등록된 학생이 없습니다.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- 선생님 관리 -->
+<!-- ========================= -->
+
+<section
+id="teacherPage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+👨‍🏫 선생님 관리
+
+</h2>
+
+<div class="toolbar">
+
+<input
+type="text"
+id="teacherName"
+placeholder="선생님 성함">
+
+<button onclick="addTeacher()">
+
+➕ 선생님 추가
+
+</button>
+
+</div>
+
+<br>
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>이름</th>
+<th>담당 클래스</th>
+<th>관리</th>
+
+</tr>
+
+</thead>
+
+<tbody id="teacherTable">
+
+<tr>
+
+<td colspan="3">
+
+등록된 선생님이 없습니다.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- 클래스 관리 -->
+<!-- ========================= -->
+
+<section
+id="classPage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+🏫 클래스 관리
+
+</h2>
+
+<div class="toolbar">
+
+<input
+type="text"
+id="className"
+placeholder="클래스 이름">
+
+<select id="classTeacher">
+
+<option value="">
+
+담당 선생님 선택
+
+</option>
+
+</select>
+
+<button onclick="addClass()">
+
+➕ 클래스 생성
+
+</button>
+
+</div>
+
+<br>
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>클래스</th>
+<th>담당 선생님</th>
+<th>학생 수</th>
+<th>관리</th>
+
+</tr>
+
+</thead>
+
+<tbody id="classTable">
+
+<tr>
+
+<td colspan="4">
+
+등록된 클래스가 없습니다.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- 학습 관리 -->
+<!-- ========================= -->
+
+<section
+id="lessonPage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+📚 학습 관리
+
+</h2>
+
+<div class="toolbar">
+
+<input
+type="text"
+id="lessonTitle"
+placeholder="차시 제목">
+
+<input
+type="text"
+id="lessonVideo"
+placeholder="영상 링크">
+
+<button onclick="addLesson()">
+
+➕ 차시 추가
+
+</button>
+
+</div>
+
+<br>
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>차시</th>
+
+<th>영상</th>
+
+<th>관리</th>
+
+</tr>
+
+</thead>
+
+<tbody id="lessonTable">
+
+<tr>
+
+<td colspan="3">
+
+등록된 차시가 없습니다.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- 공지사항 -->
+<!-- ========================= -->
+
+<section
+id="noticePage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+📢 공지사항
+
+</h2>
+
+<div class="toolbar">
+
+<input
+type="text"
+id="noticeTitle"
+placeholder="공지 제목">
+
+<button onclick="addNotice()">
+
+작성
+
+</button>
+
+</div>
+
+<br>
+
+<textarea
+
+id="noticeContent"
+
+rows="8"
+
+placeholder="공지 내용을 입력하세요.">
+
+</textarea>
+
+<br><br>
+
+<div id="noticeList">
+
+등록된 공지가 없습니다.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- 통계 -->
+<!-- ========================= -->
+
+<section
+id="statisticsPage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+📊 통계
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+전체 학생
+
+</h3>
+
+<p id="statStudents">
+
+0명
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+승인 완료
+
+</h3>
+
+<p id="statApproved">
+
+0명
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+승인 대기
+
+</h3>
+
+<p id="statPending">
+
+0명
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+평균 진도
+
+</h3>
+
+<p id="statProgress">
+
+0%
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- 설정 -->
+<!-- ========================= -->
+
+<section
+id="settingsPage"
+class="page"
+style="display:none;">
+
+<div class="box">
+
+<h2>
+
+⚙ 설정
+
+</h2>
+
+<div class="setting-group">
+
+<label>
+
+관리자 이름
+
+</label>
+
+<input
+type="text"
+id="settingAdminName">
+
+</div>
+
+<br>
+
+<div class="setting-group">
+
+<button onclick="saveSettings()">
+
+💾 설정 저장
+
+</button>
+
+<button onclick="logoutAdmin()">
+
+🚪 로그아웃
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Footer -->
+<!-- ========================= -->
+
+<footer class="footer">
+
+© 2026 송린중 코딩 동아리
+
+관리자 시스템 Version 1.0 Stable
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="admin_1.0.js"></script>
+
+</body>
+
+</html>

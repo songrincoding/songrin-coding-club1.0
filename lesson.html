@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>학습하기</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="lesson-header">
+
+    <h1>송린중 코딩 동아리</h1>
+<div class="nav-buttons">
+
+        <button onclick="location.href='dashboard.html'">
+            🏠 대시보드
+        </button>
+
+        <button onclick="logout()">
+            🚪 로그아웃
+        </button>
+
+    </div>
+</header>
+
+<div class="lesson-container">
+
+    <h2 id="lessonTitle">
+        불러오는 중...
+    </h2>
+<div id="videoComplete" class="complete-box">
+
+    ⏳ 영상을 끝까지 시청해주세요.
+
+</div>
+
+<hr>
+
+<div id="quizArea" style="display:none;">
+
+    <h2>📝 퀴즈</h2>
+
+    <div id="quizContainer"></div>
+
+</div>
+    <video
+        id="lessonVideo"
+        controls
+        controlsList="nodownload"
+    >
+
+        <source id="videoSource">
+
+    </video>
+
+    <div id="watchStatus">
+
+        시청률 : 0%
+
+    </div>
+
+    <div class="lesson-description">
+
+        <h3>학습 내용</h3>
+
+        <p id="lessonDescription">
+            설명을 불러오는 중...
+        </p>
+
+    </div>
+
+    <div id="quizArea">
+
+        <h3>퀴즈</h3>
+        
+<div id="quizContainer"></div>
+
+<button
+    id="submitQuiz"
+    style="display:none;"
+    onclick="submitQuiz()">
+
+    제출하기
+
+</button>
+    </div>
+
+</div>
+
+<script type="module" src="lesson.js"></script>
+
+</body>
+</html>

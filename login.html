@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송린중 코딩 동아리 로그인</title>
+
+    <link rel="stylesheet" href="login.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <div class="login-container">
+
+        <h1>송린중 코딩 동아리</h1>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="아이디"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="비밀번호"
+        >
+
+        <button onclick="login()">
+            로그인
+        </button>
+
+        <div class="links">
+    <a href="#" onclick="findId()">
+        아이디 찾기
+    </a>
+
+    <span>|</span>
+
+    <a href="#" onclick="resetPassword()">
+        비밀번호 찾기
+    </a>
+</div>
+
+        <div class="signup">
+            <a href="signup.html">회원가입</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

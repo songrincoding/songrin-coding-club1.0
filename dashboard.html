@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 대시보드</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="student-layout">
+
+    <!-- 사이드바 -->
+    <div class="student-sidebar">
+
+        <div class="student-profile">
+
+            <img
+                id="characterImage"
+                src="images/boy1.png"
+                alt="캐릭터">
+
+            <h3 id="studentName">
+                홍길동
+            </h3>
+
+        </div>
+
+        <ul>
+
+            <li>🏠 대시보드</li>
+
+            <li>📚 학습하기</li>
+
+            <li>📊 내 점수</li>
+
+            <li>📢 공지사항</li>
+
+            <li>🏆 랭킹</li>
+
+            <li onclick="openProfileEditor()">
+                ⚙️ 프로필 수정
+            </li>
+
+        </ul>
+
+        <button onclick="logout()">
+            🚪 로그아웃
+        </button>
+
+    </div>
+
+    <!-- 메인 영역 -->
+    <div class="student-main">
+
+        <!-- 상단 -->
+        <div class="topbar">
+
+            <h1>
+                송린중 코딩 동아리
+            </h1>
+
+        </div>
+
+        <!-- 환영 카드 -->
+        <div class="welcome-card">
+
+            <div>
+
+                <h2 id="welcomeText">
+                    환영합니다!
+                </h2>
+
+                <p>
+                    열심히 학습하고 코딩 실력을 키워보세요!
+                </p>
+
+            </div>
+
+            <div class="progress-box">
+
+                <h3>전체 진도</h3>
+
+                <h2 id="progressText">
+                    0 / 24 완료
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- 학습실 이동 -->
+
+<div class="study-box">
+
+    <h2>📚 학습하기</h2>
+
+    <p>
+        학습실에서 24차시를 학습할 수 있습니다.
+    </p>
+
+    <button onclick="location.href='lessons.html'">
+        학습실 입장
+    </button>
+
+</div>
+<!-- 프로필 관리 -->
+
+<div class="study-box">
+
+    <h2>👤 프로필 관리</h2>
+
+    <p>
+        비밀번호와 캐릭터를 변경할 수 있습니다.
+    </p>
+
+    <button onclick="openProfileEditor()">
+        ⚙️ 프로필 수정
+    </button>
+
+</div>
+
+        <!-- 하단 -->
+        <div class="bottom-grid">
+
+            <div class="notice">
+
+                <h3>📢 공지사항</h3>
+
+                <ul id="dashboardNoticeList">
+                </ul>
+
+            </div>
+
+            <div class="notice">
+
+                <h3>📊 내 통계</h3>
+
+                <p>완료 차시 : <span id="myProgress">0</span> / 24</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 캐릭터 선택창 -->
+
+<div id="characterModal" class="character-modal">
+
+    <div class="character-modal-content">
+
+        <h3>캐릭터 선택</h3>
+
+        <div class="character-grid">
+
+            <img src="images/boy1.png" onclick="selectCharacter('boy1')">
+            <img src="images/boy2.png" onclick="selectCharacter('boy2')">
+            <img src="images/boy3.png" onclick="selectCharacter('boy3')">
+            <img src="images/boy4.png" onclick="selectCharacter('boy4')">
+            <img src="images/boy5.png" onclick="selectCharacter('boy5')">
+
+            <img src="images/girl1.png" onclick="selectCharacter('girl1')">
+            <img src="images/girl2.png" onclick="selectCharacter('girl2')">
+            <img src="images/girl3.png" onclick="selectCharacter('girl3')">
+            <img src="images/girl4.png" onclick="selectCharacter('girl4')">
+            <img src="images/girl5.png" onclick="selectCharacter('girl5')">
+
+        </div>
+
+        <button onclick="closeCharacterEditor()">
+            닫기
+        </button>
+
+    </div>
+
+</div>
+
+<!-- 프로필 수정 -->
+
+<div id="profileModal" class="character-modal">
+
+    <div class="character-modal-content">
+        <h3>👤 캐릭터 변경</h3>
+
+<button onclick="openCharacterEditor()">
+    캐릭터 변경
+</button>
+
+<hr>
+
+        <h3>프로필 수정</h3>
+
+        <p>
+            이름, 학번, 아이디 변경은 관리자에게 문의하세요.
+        </p>
+
+        <input
+            type="password"
+            id="newPassword"
+            placeholder="새 비밀번호">
+
+        <button onclick="changePassword()">
+            비밀번호 변경
+        </button>
+
+        <br><br>
+
+        <button onclick="closeProfileEditor()">
+            닫기
+        </button>
+
+    </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

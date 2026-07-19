@@ -1,0 +1,1573 @@
+/* ========================= */
+/* 기본 */
+/* ========================= */
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow-x: hidden;
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f7fb;
+
+}
+
+/* ========================= */
+/* 헤더 */
+/* ========================= */
+
+header {
+
+    background: #16233b;
+
+    color: white;
+
+    padding: 40px;
+
+}
+
+header h1 {
+
+    margin: 0;
+
+}
+
+/* ========================= */
+/* 대시보드 */
+/* ========================= */
+
+.dashboard {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 20px auto;
+
+}
+
+/* ========================= */
+/* 프로필 */
+/* ========================= */
+
+.profile-box {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+/* 캐릭터 */
+
+.character-box {
+
+    position: relative;
+
+    width: 150px;
+
+    margin: 0 auto 20px;
+
+}
+
+.character-box img {
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 15px;
+
+    border: 3px solid #2563eb;
+
+    object-fit: cover;
+
+}
+
+/* 연필 버튼 */
+
+.edit-character {
+
+    position: absolute;
+
+    top: -10px;
+
+    right: -10px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 2px solid #2563eb;
+
+    color: #2563eb;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    padding: 0;
+
+}
+
+/* 환영문구 */
+
+#studentName {
+
+    font-size: 32px;
+
+    margin: 10px 0;
+
+    font-weight: bold;
+
+}
+
+/* 진도 */
+
+#progressText {
+
+    color: #666;
+
+    font-size: 18px;
+
+}
+
+/* ========================= */
+/* 차시 카드 */
+/* ========================= */
+
+.lesson-list {
+
+    display: flex;
+
+    gap: 15px;
+
+    overflow-x: auto;
+
+    max-width: 100%;
+
+}
+
+.lesson-card {
+
+    min-width: 120px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+}
+
+.lesson-card h3 {
+
+    margin-bottom: 15px;
+
+}
+
+.lesson-card button {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+.lesson-card button:hover {
+
+    background: #1d4ed8;
+
+}
+
+/* 잠금 */
+
+.locked {
+
+    opacity: 0.6;
+
+}
+
+/* ========================= */
+/* 공지사항 */
+/* ========================= */
+
+.notice {
+
+    margin-top: 30px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+}
+
+.notice h3 {
+
+    margin-top: 0;
+
+}
+
+.notice ul {
+
+    padding-left: 20px;
+
+}
+/* ========================= */
+/* 관리자 페이지 */
+/* ========================= */
+
+.layout {
+
+    display: flex;
+
+    min-height: 100vh;
+
+}
+
+/* 사이드바 */
+
+.sidebar {
+
+    width: 250px;
+
+    background: #1e293b;
+
+    color: white;
+
+    padding: 20px;
+
+}
+
+.sidebar h2 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.sidebar ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+.sidebar li {
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.sidebar li:hover {
+
+    background: rgba(255,255,255,0.1);
+
+}
+
+/* 메인 */
+
+.main {
+
+    flex: 1;
+
+    padding: 30px;
+
+}
+
+/* 상단 */
+
+.topbar h1{
+
+    color:#222;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+.welcome{
+
+    color:#666;
+
+    margin-top:6px;
+
+}
+#clock{
+
+    color:#222;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+#todayDate{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+/* 카드 */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+.card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+}
+
+.card h3 {
+
+    margin-top: 0;
+
+    color: #666;
+
+}
+
+.card p {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 0;
+
+}
+
+/* 콘텐츠 */
+
+.content {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 20px;
+
+}
+
+.box {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+}
+
+/* 테이블 */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+th {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+th,
+td {
+
+    padding: 12px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+/* 승인/거절 버튼 */
+
+td button {
+
+    width: auto;
+
+    padding: 8px 14px;
+
+    margin: 2px;
+
+    border-radius: 6px;
+
+}
+
+/* 공지 입력 */
+
+#noticeInput {
+
+    margin-bottom: 10px;
+
+}
+
+/* 공지 등록 버튼 */
+
+.notice-btn {
+
+    width: 100%;
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-bottom: 15px;
+
+}
+
+.notice-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+/* 공지 목록 */
+
+#noticeList {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+#noticeList li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px;
+
+    margin-bottom: 8px;
+
+    background: #f8fafc;
+
+    border-radius: 8px;
+
+}
+/* 캐릭터 선택창 */
+
+.character-modal {
+
+    display: none;
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.character-modal-content {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    width: 600px;
+
+    text-align: center;
+
+}
+
+.character-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+}
+
+.character-grid img {
+
+    width: 90px;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    border: 2px solid transparent;
+
+}
+
+.character-grid img:hover {
+
+    border-color: #2563eb;
+
+}
+.header-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+.header-buttons button {
+
+    width: auto;
+
+    padding: 10px 15px;
+
+}
+
+.character-modal input {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+}
+.submenu {
+
+    display: none;
+
+    margin-top: 10px;
+
+    margin-left: 15px;
+
+    padding-left: 10px;
+
+}
+
+.submenu li {
+
+    list-style: none;
+
+    padding: 8px 0;
+
+    font-size: 14px;
+
+    color: #ddd;
+
+    cursor: pointer;
+
+}
+
+.submenu li:hover {
+
+    color: white;
+
+}
+.submenu {
+
+    display: none;
+
+    margin-top: 10px;
+
+    margin-left: 15px;
+
+}
+
+.submenu li {
+
+    list-style: none;
+
+    padding: 8px 0;
+
+    color: #ddd;
+
+    cursor: pointer;
+
+}
+/* 학생 수정 모달 */
+
+.edit-modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.edit-content {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    width: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.edit-content input {
+
+    padding: 10px;
+
+}
+/* ========================= */
+/* 홈페이지(index) */
+/* ========================= */
+
+header {
+
+    background: #16233b;
+
+    color: white;
+
+    padding: 20px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+}
+
+nav {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+nav a:hover {
+
+    color: #60a5fa;
+
+}
+
+.hero {
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+}
+
+.hero h1 {
+
+    font-size: 48px;
+
+    margin-bottom: 30px;
+
+}
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+.btn {
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+.btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+.notice {
+
+    width: 90%;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+}
+
+.notice h2 {
+
+    margin-top: 0;
+
+}
+/* ========================= */
+/* 학생 대시보드 */
+/* ========================= */
+
+.student-layout{
+
+    display:flex;
+
+    max-width:1600px;
+
+    margin:20px auto;
+
+    min-height:95vh;
+
+}
+
+.student-sidebar {
+
+    width: 250px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-right: 1px solid #ddd;
+
+}
+
+.student-profile {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.student-profile img {
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    border: 3px solid #2563eb;
+
+}
+
+.student-sidebar ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+.student-sidebar li {
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+}
+
+.student-sidebar li:hover {
+
+    background: #eef2ff;
+
+}
+
+.student-main {
+
+    flex: 1;
+
+    padding: 30px;
+
+}
+
+.topbar {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+.welcome-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+.progress-box {
+
+    text-align: center;
+
+}
+
+.bottom-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+}
+.student-profile h3 {
+
+    font-size: 22px;
+
+    line-height: 1.6;
+
+    white-space: pre-line;
+
+    word-break: keep-all;
+
+}
+
+/* ========================= */
+/* 학습실 */
+/* ========================= */
+
+.lesson-page{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.lesson-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.lesson-header button{
+
+    margin-left:10px;
+
+    padding:10px 15px;
+
+}
+
+.lesson-info{
+
+    background:white;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+.lesson-grid{
+
+    margin-top:20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.lesson-item{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.lesson-item button{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+.lesson-lock{
+
+    opacity:.5;
+}
+/* ========================= */
+/* 학습실 이동 박스 */
+/* ========================= */
+
+.study-box{
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.study-box h2{
+
+    margin-top:0;
+
+}
+
+.study-box button{
+
+    margin-top:15px;
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+.study-box button:hover{
+
+    background:#1d4ed8;
+
+}
+/* ========================= */
+/* 학습실 */
+/* ========================= */
+
+.lesson-header{
+
+    background:#2563eb;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.lesson-container{
+
+    width:900px;
+
+    margin:30px auto;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+#lessonVideo{
+
+    width:100%;
+
+    border-radius:10px;
+
+    margin-top:20px;
+
+}
+
+#watchStatus{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#2563eb;
+
+}
+
+.lesson-description{
+
+    margin-top:30px;
+
+    line-height:1.8;
+
+}
+
+#quizArea{
+
+    margin-top:40px;
+
+}
+/* ========================= */
+/* 학습 목록 */
+/* ========================= */
+
+.lesson-header{
+
+    background:#16233b;
+
+    color:white;
+
+    padding:20px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.lesson-header h1{
+
+    margin:0;
+
+}
+
+.back-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.back-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.lesson-page{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+}
+
+.lesson-info{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.lesson-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.lesson-box{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.lesson-box h3{
+
+    margin-top:0;
+
+}
+
+.lesson-box p{
+
+    color:#666;
+
+}
+
+.lesson-box button{
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.lesson-box button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.lesson-lock{
+
+    opacity:.5;
+
+}
+.complete-box{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#fff3cd;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+.complete-success{
+
+    background:#d1fae5;
+
+    color:#065f46;
+
+}
+
+#quizArea{
+
+    margin-top:30px;
+
+}
+.quiz-card{
+
+    background:#f8fafc;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+}
+
+.quiz-card h3{
+
+    margin-top:0;
+
+}
+
+#submitQuiz{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+#lessonManager{
+
+    margin-top:20px;
+
+}
+
+#lessonManager input,
+#lessonManager textarea,
+#lessonManager select{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    box-sizing:border-box;
+
+}
+
+#lessonManager button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+/* ============================= */
+/* TOP BAR */
+/* ============================= */
+
+.topbar{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.topbar-left{
+
+    text-align:center;
+
+    flex:1;
+
+}
+
+.topbar-left h1{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#777;
+
+    font-size:18px;
+
+}
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.profile-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#f5f7fb;
+
+    padding:15px 22px;
+
+    border-radius:18px;
+
+}
+
+.profile-image{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+}
+.server-time{
+
+    min-width:180px;
+
+    padding:18px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.time-title{
+
+    font-size:13px;
+
+    color:#666;
+
+    margin-bottom:8px;
+
+}
+
+#serverTime{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+#serverDate{
+
+    margin-top:5px;
+
+    font-size:15px;
+
+    color:#666;
+
+}
